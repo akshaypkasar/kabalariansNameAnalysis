@@ -1,7 +1,7 @@
 # kabalariansNameAnalysis
 
 Want to know what your name means?
-Use "Nameology" to demistify the secrets of your name.
+Use **"Nameology"** to demistify the secrets of your name.
 
 The code is divided in two parts:
 
