@@ -8,14 +8,14 @@ const LaunchRequestHandler = {
         return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
     },
     handle(handlerInput) {
-        const speechText = 'Welcome to Name o logee. Let me demistfy the secrets about your name.';
+        const speechText = 'Welcome to Name o logee. Say analyze my name.';
         return handlerInput.responseBuilder
             .speak(speechText)
             .reprompt(speechText)
             .getResponse();
     }
 };
-const HelloWorldIntentHandler = {
+/*const HelloWorldIntentHandler = {
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'IntentRequest'
             && handlerInput.requestEnvelope.request.intent.name === 'HelloWorldIntent';
@@ -27,7 +27,7 @@ const HelloWorldIntentHandler = {
             //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
             .getResponse();
     } 
-};
+};*/
 
 //My Custom Intents
 const NameologyIntentHandler = {
