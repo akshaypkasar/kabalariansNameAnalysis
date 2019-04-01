@@ -1,0 +1,166 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "bucky hosted skill",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "NameologyIntent",
+                    "slots": [
+                        {
+                            "name": "name",
+                            "type": "AMAZON.US_FIRST_NAME",
+                            "samples": [
+                                "my name is {name}",
+                                "it's {name}",
+                                "it is {name}",
+                                "My first name is {name}"
+                            ]
+                        },
+                        {
+                            "name": "gender",
+                            "type": "gender",
+                            "samples": [
+                                "I am a {gender}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "tell my first name analysis",
+                        "analyse my first name",
+                        "can you analyse the meaning of my first name",
+                        "tell me meaning of my name",
+                        "analyze my name"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "gender",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "female",
+                                "synonyms": [
+                                    "her",
+                                    "she",
+                                    "women",
+                                    "girl"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "male",
+                                "synonyms": [
+                                    "his",
+                                    "boy",
+                                    "man",
+                                    "he"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "NameologyIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "name",
+                            "type": "AMAZON.US_FIRST_NAME",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.1359678754345.288402959085",
+                                "elicitation": "Elicit.Slot.1359678754345.288402959085"
+                            }
+                        },
+                        {
+                            "name": "gender",
+                            "type": "gender",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.1105833980978.1012913834620",
+                                "elicitation": "Elicit.Slot.1359678754345.464746012465"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.1359678754345.288402959085",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Can you please tell me your first name by saying My name is followed by your first name."
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "May I have your first name please"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1359678754345.464746012465",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Now can you tell me your gender"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1359678754345.288402959085",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Thank you {name} . Did I get your name right?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.191107773171",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Thank you {name} {gender}"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1105833980978.1012913834620",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": " So just to confirm, you are a {gender} , correct {name} ?"
+                    }
+                ]
+            }
+        ]
+    }
+}
